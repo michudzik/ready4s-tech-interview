@@ -51,7 +51,7 @@ export class ChartComponent implements OnInit {
       this.chartData = [{
         name: `${this.baseCurrency} - ${this.rateCurrency}`,
         series: seriesData
-      }]
-    })
+      }];
+    });
   }
 }
