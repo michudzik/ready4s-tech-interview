@@ -1,0 +1,5 @@
+<ng-container *ngIf="ready">
+  <section>
+    {{ fromCurrency }} - {{ toCurrency }} | {{ 1 | currency: fromCurrency: 'symbol'}} = {{ toCurrencyValue | currency: toCurrency: 'symbol' }}
+  </section>
+</ng-container>
