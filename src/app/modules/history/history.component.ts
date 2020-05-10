@@ -6,7 +6,6 @@ import { DatePipe } from '@angular/common';
   templateUrl: './history.component.html'
 })
 export class HistoryComponent implements OnInit {
-  // TODO: Manage via query params
   startDate: string = '2010-01-01';
   endDate: Date | string = new Date();
   baseCurrency: string = 'EUR';
