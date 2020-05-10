@@ -1,0 +1,19 @@
+<section class="carousel-container">
+  <div class="carousel">
+    <ng-container *ngFor="let item of items; let i = index">
+      <div class="carousel-slide" *ngIf="i === currentSlide">
+        <app-exchange-rate
+          [fromCurrency]="item.fromCurrency"
+          [toCurrency]="item.toCurrency"
+        ></app-exchange-rate>
+      </div>
+    </ng-container>
+
+    <button class="carousel-control carouse-control-previous" (click)="onPrevious()">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+    <button class="carousel-control carousel-control-next" (click)="onNext()">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+  </div>
+</section>

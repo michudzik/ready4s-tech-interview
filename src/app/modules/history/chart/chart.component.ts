@@ -38,7 +38,7 @@ export class ChartComponent implements OnInit {
     this.yAxisLabel = this.yAxisLabel + `(${this.baseCurrency} - ${this.rateCurrency})`;
   }
 
-  private fetchExchangeRateHistory() {
+  private fetchExchangeRateHistory(): void {
     this.exchangeRateService.getExchangeRateHistory(this.startDate, this.endDate, this.baseCurrency, this.rateCurrency).pipe(
       map(response => {
         const parsedData: SeriesData[] = Object.keys(response).sort().map(date => ({ name: date, value: response[date][this.rateCurrency] }));

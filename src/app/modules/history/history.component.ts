@@ -3,8 +3,7 @@ import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.scss']
+  templateUrl: './history.component.html'
 })
 export class HistoryComponent implements OnInit {
   // TODO: Manage via query params
@@ -18,7 +17,7 @@ export class HistoryComponent implements OnInit {
     private datePipe: DatePipe
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.endDate = this.datePipe.transform(this.endDate, 'yyyy-MM-dd');
   }
 }
