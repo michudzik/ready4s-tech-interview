@@ -8,6 +8,7 @@ import { MenuComponent } from './core/menu/menu.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { ExchangeRateComponent } from './modules/app/exchange-rate/exchange-rate.component';
 import { DashboardComponent } from './modules/app/dashboard/dashboard.component';
+import { CarouselComponent } from './modules/app/carousel/carousel.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule }from './modules/material.module';
@@ -18,7 +19,8 @@ import { MaterialModule }from './modules/material.module';
     MenuComponent,
     FooterComponent,
     ExchangeRateComponent,
-    DashboardComponent
+    DashboardComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

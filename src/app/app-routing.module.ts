@@ -2,11 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './modules/app/dashboard/dashboard.component';
+import { CarouselComponent } from './modules/app/carousel/carousel.component';
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'carousel',
+    component: CarouselComponent
   },
   {
     path: 'history',

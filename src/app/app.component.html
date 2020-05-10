@@ -1,11 +1,13 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav mode="side" opened>
     <app-menu></app-menu>
+    <footer class="sidenav-content">
+      <app-footer></app-footer>
+    </footer>
   </mat-sidenav>
   <mat-sidenav-content>
     <main class="sidenav-content">
       <router-outlet></router-outlet>
-      <app-footer></app-footer>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
