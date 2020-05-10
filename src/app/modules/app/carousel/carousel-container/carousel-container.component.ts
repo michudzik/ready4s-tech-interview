@@ -10,7 +10,7 @@ export class CarouselContainerComponent implements OnInit {
   @Input() slideDisplayTime: number = 4000;
   @ContentChildren(CarouselItemDirective) carouselItems: QueryList<CarouselItemDirective>;
 
-  intervalId;
+  intervalId = null;
   currentSlide: number = 0;
 
   ngOnInit(): void {
@@ -32,11 +32,11 @@ export class CarouselContainerComponent implements OnInit {
     this.resetInterval();
   }
 
-  private initializeInterval(): void {
+  initializeInterval(): void {
     this.intervalId = setInterval(() => this.next(), this.slideDisplayTime);
   }
 
-  private resetInterval(): void {
+  resetInterval(): void {
     clearInterval(this.intervalId);
     this.initializeInterval();
   }
