@@ -4,13 +4,16 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CarouselContainerComponent } from 'src/app/modules/app/carousel/carousel-container/carousel-container.component';
 import { CarouselItemDirective } from 'src/app/modules/app/carousel/carousel-container/carousel-item.directive';
 
+import { MaterialModule } from 'src/app/modules/material.module';
+
 describe('CarouselContainerComponent', () => {
   let component: CarouselContainerComponent;
   let fixture: ComponentFixture<CarouselContainerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CarouselContainerComponent]
+      declarations: [CarouselContainerComponent],
+      imports: [MaterialModule]
     })
     .compileComponents();
   }));
@@ -117,7 +120,8 @@ describe('CarouselContainerComponent with children', () => {
         CarouselContainerComponent,
         CarouselItemDirective,
         TestWrapperComponent,
-      ]
+      ],
+      imports: [MaterialModule]
     })
     .compileComponents();
   }));
