@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {
-  // TODO: Manage via query params
   fromCurrency: string = 'EUR';
   toCurrency: string = 'PLN';
 }
