@@ -9,6 +9,10 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
+    path: 'history',
+    loadChildren: () => import('./modules/history/history.module').then(m => m.HistoryModule)
+  },
+  {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
