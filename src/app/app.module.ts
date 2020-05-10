@@ -11,7 +11,9 @@ import { DashboardComponent } from './modules/app/dashboard/dashboard.component'
 import { CarouselComponent } from './modules/app/carousel/carousel.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MaterialModule }from './modules/material.module';
+import { MaterialModule } from './modules/material.module';
+import { CarouselItemDirective } from './modules/app/carousel/carousel-container/carousel-item.directive';
+import { CarouselContainerComponent } from './modules/app/carousel/carousel-container/carousel-container.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { MaterialModule }from './modules/material.module';
     FooterComponent,
     ExchangeRateComponent,
     DashboardComponent,
-    CarouselComponent
+    CarouselComponent,
+    CarouselContainerComponent,
+    CarouselItemDirective,
   ],
   imports: [
     BrowserModule,

@@ -7,11 +7,11 @@ import { DatePipe } from '@angular/common';
 })
 export class HistoryComponent implements OnInit {
   // TODO: Manage via query params
-  startDate: string = "2010-01-01";
+  startDate: string = '2010-01-01';
   endDate: Date | string = new Date();
-  baseCurrency: string = "EUR";
-  rateCurrency: string = "PLN";
-  resolution: number[] = [800, 500]
+  baseCurrency: string = 'EUR';
+  rateCurrency: string = 'PLN';
+  resolution: number[] = [800, 500];
 
   constructor(
     private datePipe: DatePipe

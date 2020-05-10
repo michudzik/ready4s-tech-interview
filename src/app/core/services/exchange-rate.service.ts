@@ -7,7 +7,7 @@ import { pluck } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ExchangeRateService {
-  baseUrl: string = "https://api.exchangeratesapi.io";
+  baseUrl: string = 'https://api.exchangeratesapi.io';
 
   constructor(
     private http: HttpClient
@@ -26,7 +26,7 @@ export class ExchangeRateService {
       `&start_at=${startDate}&end_at=${endDate}`
     ).pipe(
       pluck('rates')
-    )
+    );
   }
 
   private exchangeRateUrl(): string {
