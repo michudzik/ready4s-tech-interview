@@ -1,4 +1,47 @@
+<form [formGroup]="currencyForm" (ngSubmit)="onSubmit()" >
+  <mat-form-field appearance="standard" floatLabel="always">
+    <mat-label>
+      Base currency:
+    </mat-label>
+    <input matInput formControlName="baseCurrency" required/>
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" floatLabel="always">
+    <mat-label>
+      Exchange currency:
+    </mat-label>
+    <input matInput formControlName="exchangeCurrency" required/>
+  </mat-form-field>
+
+  <button
+    mat-flat-button
+    color="primary"
+    [disabled]="currencyForm.invalid"
+    type="submit">Fetch</button>
+</form>
+
+<div *ngIf="baseCurrency.invalid && (baseCurrency.dirty || baseCurrency.touched)">
+  <div *ngIf="baseCurrency.errors.required">
+    Base currency is required.
+  </div>
+
+  <div *ngIf="baseCurrency.errors.minlength">
+    Base currency must be at least 3 characters long.
+  </div>
+</div>
+
+<div *ngIf="exchangeCurrency.invalid && (exchangeCurrency.dirty || exchangeCurrency.touched)">
+  <div *ngIf="exchangeCurrency.errors.required">
+    Exchange currency is required.
+  </div>
+
+  <div *ngIf="exchangeCurrency.errors.minlength">
+    Exchange currency must be at least 3 characters long.
+  </div>
+</div>
+
 <app-exchange-rate
-  [fromCurrency]="fromCurrency"
-  [toCurrency]="toCurrency"
+  *ngIf="ready"
+  [fromCurrency]="currencyForm.controls.baseCurrency.value"
+  [toCurrency]="currencyForm.controls.exchangeCurrency.value"
 ></app-exchange-rate>
