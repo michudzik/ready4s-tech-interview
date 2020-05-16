@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ContentChildren, QueryList } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, ContentChildren, QueryList } from '@angular/core';
 import { CarouselItemDirective } from './carousel-item.directive';
 import { interval, Subscription } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { interval, Subscription } from 'rxjs';
   templateUrl: './carousel-container.component.html',
   styleUrls: ['./carousel-container.component.scss']
 })
-export class CarouselContainerComponent implements OnInit {
+export class CarouselContainerComponent implements OnInit, OnDestroy {
   @Input() slideDisplayTime: number = 4000;
   @ContentChildren(CarouselItemDirective) carouselItems: QueryList<CarouselItemDirective>;
 
@@ -16,6 +16,10 @@ export class CarouselContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeInterval();
+  }
+
+  ngOnDestroy(): void {
+    this.intervalSubscription?.unsubscribe();
   }
 
   next(): void {
