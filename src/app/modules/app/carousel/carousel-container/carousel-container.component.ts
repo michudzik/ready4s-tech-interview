@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, ContentChildren, ViewChildren, ElementRef, QueryList } from '@angular/core';
+import { Component, Input, OnInit, ContentChildren, QueryList } from '@angular/core';
 import { CarouselItemDirective } from './carousel-item.directive';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-carousel-container',
@@ -10,7 +11,7 @@ export class CarouselContainerComponent implements OnInit {
   @Input() slideDisplayTime: number = 4000;
   @ContentChildren(CarouselItemDirective) carouselItems: QueryList<CarouselItemDirective>;
 
-  intervalId = null;
+  intervalSubscription: Subscription;
   currentSlide: number = 0;
 
   ngOnInit(): void {
@@ -33,11 +34,11 @@ export class CarouselContainerComponent implements OnInit {
   }
 
   initializeInterval(): void {
-    this.intervalId = setInterval(() => this.next(), this.slideDisplayTime);
+    this.intervalSubscription = interval(this.slideDisplayTime).subscribe(() => this.next());
   }
 
   resetInterval(): void {
-    clearInterval(this.intervalId);
+    this.intervalSubscription.unsubscribe();
     this.initializeInterval();
   }
 }
